@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handesha Sah </title>
+    <link rel="icon" href="images/logo-rounded.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#092b56",
+              secondary: "#a3ddfd",
+              accent: "#0a4d8c",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              cairo: ["Cairo", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full font-poppins text-primary bg-white">
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="text-center">
+        <div
+          class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"
+        ></div>
+        <p class="text-primary font-semibold" data-i18n="common.loading">
+          Loading...
+        </p>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <!-- Navigation -->
+      <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b-2 border-orange-400"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20 md:h-24">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-3 group cursor-pointer">
+              <div class="relative w-14 h-16 md:w-14 md:h-16">
+                <img src="images/logo.png" alt="" />
+              </div>
+              <div class="hidden sm:block">
+                <div
+                  class="font-cairo font-black text-xl md:text-2xl text-primary"
+                >
+                  هندسها صح
+                </div>
+                <div class="text-xs md:text-sm text-orange-400 font-semibold">
+                  Handesha Sah
+                </div>
+              </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-2 lg:gap-4">
+              <a
+                href="#home"
+                class="nav-link text-primary font-semibold hover:text-orange-500 px-3 py-2 rounded-lg transition-all hover:bg-orange-50"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-primary font-semibold hover:text-orange-500 px-3 py-2 rounded-lg transition-all hover:bg-orange-50"
+                >About</a
+              >
+              <a
+                href="#members"
+                class="nav-link text-primary font-semibold hover:text-orange-500 px-3 py-2 rounded-lg transition-all hover:bg-orange-50"
+                >Team</a
+              >
+              <a
+                href="#events"
+                class="nav-link text-primary font-semibold hover:text-orange-500 px-3 py-2 rounded-lg transition-all hover:bg-orange-50"
+                >Events</a
+              >
+              <a
+                href="#contact"
+                class="nav-link text-primary font-semibold hover:text-orange-500 px-3 py-2 rounded-lg transition-all hover:bg-orange-50"
+                >Contact</a
+              >
+              <!-- Language Toggle -->
+              <div class="lang-toggle">
+                <button
+                  id="lang-en"
+                  class="active"
+                  onclick="i18n.changeLanguage('en')"
+                >
+                  EN
+                </button>
+                <button id="lang-ar" onclick="i18n.changeLanguage('ar')">
+                  AR
+                </button>
+              </div>
+            </div>
+
+            <!-- Join Button -->
+            <div class="hidden md:block">
+              <a
+                href="#contact"
+                class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-orange-500/50 transition-all hover:-translate-y-0.5"
+              >
+                <span>Join Now</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  /></svg
+              ></a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              aria-label="Toggle mobile menu"
+              class="md:hidden p-3 rounded-lg hover:bg-orange-100 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden bg-white border-t-2 border-orange-400 shadow-lg"
+        >
+          <div class="px-4 py-4 space-y-2">
+            <a
+              href="#home"
+              class="block py-3 px-4 rounded-lg hover:bg-orange-100 text-primary font-semibold transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="block py-3 px-4 rounded-lg hover:bg-orange-100 text-primary font-semibold transition-colors"
+              >About</a
+            >
+            <a
+              href="#members"
+              class="block py-3 px-4 rounded-lg hover:bg-orange-100 text-primary font-semibold transition-colors"
+              >Team</a
+            >
+            <a
+              href="#events"
+              class="block py-3 px-4 rounded-lg hover:bg-orange-100 text-primary font-semibold transition-colors"
+              >Events</a
+            >
+            <a
+              href="#contact"
+              class="block py-3 px-4 rounded-lg hover:bg-orange-100 text-primary font-semibold transition-colors"
+              >Contact</a
+            >
+
+            <a
+              href="#contact"
+              class="block py-3 px-4 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold mt-2"
+              >Join Now</a
+            >
+            <!-- Mobile Language Toggle -->
+            <div
+              class="flex justify-center gap-2 mt-4 pt-4 border-t border-gray-200"
+            >
+              <button
+                onclick="i18n.changeLanguage('en')"
+                class="px-4 py-2 rounded-lg font-semibold bg-primary text-white"
+              >
+                EN
+              </button>
+              <button
+                onclick="i18n.changeLanguage('ar')"
+                class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-primary"
+              >
+                AR
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center hero-pattern relative overflow-hidden pt-20"
+      >
+        <!-- Decorative elements -->
+        <div
+          class="absolute top-20 left-10 w-20 h-20 bg-secondary/30 rounded-full blur-xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/20 rounded-full blur-2xl animate-float delay-300"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-16 h-16 bg-primary/10 rounded-full blur-lg animate-float delay-500"
+        ></div>
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        >
+          <div class="animate-fade-in-up">
+            <h1
+              id="title-ar"
+              class="font-cairo text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold mb-4 gradient-text"
+            >
+              هندسها صح
+            </h1>
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary/90 mb-6"
+            >
+              Handesha Sah
+            </h2>
+          </div>
+          <p
+            id="hero-slogan"
+            class="text-lg sm:text-xl md:text-2xl text-primary/70 mb-10 animate-fade-in-up delay-200 max-w-2xl mx-auto"
+          >
+            Empowering Future Engineers
+          </p>
+          <!-- Engineering illustration -->
+          <div id="eng-svg" class="mt-16 animate-fade-in delay-500">
+            <svg
+              class="w-full max-w-lg mx-auto h-auto"
+              viewbox="0 0 400 200"
+              fill="none"
+            >
+              <!-- Gear 1 -->
+              <g
+                class="animate-spin"
+                style="animation-duration: 8s; transform-origin: 100px 100px"
+              >
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="35"
+                  stroke="#092b56"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <circle cx="100" cy="100" r="15" fill="#a3ddfd" />
+                <path d="M100 60 L103 70 L97 70 Z" fill="#092b56" />
+                <path d="M100 140 L97 130 L103 130 Z" fill="#092b56" />
+                <path d="M60 100 L70 97 L70 103 Z" fill="#092b56" />
+                <path d="M140 100 L130 103 L130 97 Z" fill="#092b56" />
+                <path d="M72 72 L80 78 L75 83 Z" fill="#092b56" />
+                <path d="M128 128 L120 122 L125 117 Z" fill="#092b56" />
+                <path d="M128 72 L125 83 L120 78 Z" fill="#092b56" />
+                <path d="M72 128 L75 117 L80 122 Z" fill="#092b56" />
+              </g>
+              <!-- Gear 2 -->
+              <g
+                class="animate-spin"
+                style="
+                  animation-duration: 6s;
+                  animation-direction: reverse;
+                  transform-origin: 180px 80px;
+                "
+              >
+                <circle
+                  cx="180"
+                  cy="80"
+                  r="25"
+                  stroke="#fa923c"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <circle cx="180" cy="80" r="10" fill="#092b56" />
+                <path d="M180 50 L183 58 L177 58 Z" fill="#fa923c" />
+                <path d="M180 110 L177 102 L183 102 Z" fill="#fa923c" />
+                <path d="M150 80 L158 77 L158 83 Z" fill="#fa923c" />
+                <path d="M210 80 L202 83 L202 77 Z" fill="#fa923c" />
+              </g>
+              <!-- Blueprint lines -->
+              <line
+                x1="220"
+                y1="60"
+                x2="380"
+                y2="60"
+                stroke="#0a4d8c"
+                stroke-width="2"
+                stroke-dasharray="5,5"
+                opacity="0.5"
+              />
+              <line
+                x1="220"
+                y1="90"
+                x2="380"
+                y2="90"
+                stroke="#fa923c"
+                stroke-width="2"
+                opacity="0.5"
+              />
+              <line
+                x1="220"
+                y1="120"
+                x2="380"
+                y2="120"
+                stroke="#092b56"
+                stroke-width="2"
+                stroke-dasharray="5,5"
+                opacity="0.5"
+              />
+              <line
+                x1="220"
+                y1="150"
+                x2="380"
+                y2="150"
+                stroke="#a3ddfd"
+                stroke-width="2"
+                opacity="0.5"
+              />
+              <!-- Ruler marks -->
+              <rect
+                x="230"
+                y="55"
+                width="2"
+                height="10"
+                fill="#092b56"
+                opacity="0.7"
+              />
+              <rect
+                x="260"
+                y="55"
+                width="2"
+                height="10"
+                fill="#092b56"
+                opacity="0.7"
+              />
+              <rect
+                x="290"
+                y="55"
+                width="2"
+                height="10"
+                fill="#092b56"
+                opacity="0.7"
+              />
+              <rect
+                x="320"
+                y="55"
+                width="2"
+                height="10"
+                fill="#092b56"
+                opacity="0.7"
+              />
+              <rect
+                x="350"
+                y="55"
+                width="2"
+                height="10"
+                fill="#092b56"
+                opacity="0.7"
+              />
+              <!-- Circuit pattern -->
+              <circle cx="250" cy="140" r="4" fill="#092b56" />
+              <circle cx="310" cy="140" r="4" fill="#a3ddfd" />
+              <circle cx="370" cy="140" r="4" fill="#092b56" />
+              <line
+                x1="254"
+                y1="140"
+                x2="306"
+                y2="140"
+                stroke="#092b56"
+                stroke-width="2"
+              />
+              <line
+                x1="314"
+                y1="140"
+                x2="366"
+                y2="140"
+                stroke="#a3ddfd"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <svg
+            class="w-6 h-6 text-primary/50"
+            fill="none"
+            stroke="currentColor"
+            viewbox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section
+        id="about"
+        class="py-20 lg:py-32 bg-gradient-to-b from-white to-secondary/10"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 reveal">
+            <span
+              class="text-secondary font-semibold text-sm uppercase tracking-wider"
+              >Who We Are</span
+            >
+            <h2
+              id="about-title"
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 gradient-text"
+            >
+              About Our Club
+            </h2>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <div class="reveal">
+              <p
+                id="about-description"
+                class="text-lg text-primary/70 leading-relaxed mb-6"
+              >
+                Handesha Sah Club is a student engineering club that creates a
+                friendly and supportive space within the Faculty of Engineering.
+                We share knowledge, develop our skills, and foster a spirit of
+                teamwork and collaboration. Our mission is to support students
+                academically, socially, and emotionally through events, meetups,
+                workshops, and meaningful recreational activities. If you're a
+                student who’s passionate about self-development and looking for
+                a positive and inspiring environment… we’re here "to engineer it
+                right!"
+              </p>
+              <p class="text-lg text-primary/70 leading-relaxed"></p>
+            </div>
+            <div class="reveal delay-200">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/10 rounded-3xl transform rotate-3"
+                ></div>
+                <div class="relative bg-white p-8 rounded-3xl shadow-lg">
+                  <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center p-4">
+                      <div class="text-4xl font-bold text-primary">21+</div>
+                      <div class="text-primary/60 text-sm mt-1">
+                        Active Members
+                      </div>
+                    </div>
+                    <div class="text-center p-4">
+                      <div class="text-4xl font-bold text-primary">10+</div>
+                      <div class="text-primary/60 text-sm mt-1">
+                        Fun activities
+                      </div>
+                    </div>
+                    <div class="text-center p-4">
+                      <div class="text-4xl font-bold text-primary">4+</div>
+                      <div class="text-primary/60 text-sm mt-1">
+                        Build & Learn Events
+                      </div>
+                    </div>
+                    <div class="text-center p-4">
+                      <div class="text-4xl font-bold text-primary">2</div>
+                      <div class="text-primary/60 text-sm mt-1">
+                        Years Active
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Feature Cards -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Innovation Card -->
+            <div
+              class="reveal card-hover bg-white p-8 rounded-3xl shadow-lg border border-secondary/20"
+            >
+              <div
+                class="icon-container bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-2xl mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Innovation</h3>
+              <p class="text-primary/60 leading-relaxed">
+                Pushing boundaries and exploring new ideas to create
+                cutting-edge solutions for real-world problems.
+              </p>
+            </div>
+            <!-- Teamwork Card -->
+            <div
+              class="reveal delay-100 card-hover bg-white p-8 rounded-3xl shadow-lg border border-secondary/20"
+            >
+              <div
+                class="icon-container bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-2xl mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Teamwork</h3>
+              <p class="text-primary/60 leading-relaxed">
+                Collaborating effectively to achieve common goals and learning
+                from diverse perspectives.
+              </p>
+            </div>
+            <!-- Workshops Card -->
+            <div
+              class="reveal delay-200 card-hover bg-white p-8 rounded-3xl shadow-lg border border-secondary/20"
+            >
+              <div
+                class="icon-container bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-2xl mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Workshops</h3>
+              <p class="text-primary/60 leading-relaxed">
+                Hands-on learning experiences that bridge theory and practice in
+                engineering.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Members Section -->
+      <section id="members" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 reveal">
+            <span
+              class="text-secondary font-semibold text-sm uppercase tracking-wider"
+              >Our Team</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 gradient-text"
+            >
+              Meet the Members
+            </h2>
+            <p class="text-primary/60 mt-4 max-w-2xl mx-auto">
+              The passionate individuals driving innovation and excellence in
+              our engineering community.
+            </p>
+          </div>
+
+          <!-- Members Slider (same style as Events) -->
+          <div class="reveal">
+            <div class="members-scroll pb-4">
+              <!-- Member 1 -->
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <img src="images/layan.png" alt="" />
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Layan Najajreh</h3>
+                <p class="text-primary/50 text-sm mt-1">Head of operations</p>
+              </div>
+              <!-- Member 2 -->
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Anwar Roumanen</h3>
+                <p class="text-primary/50 text-sm mt-1">Head of strategy</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">
+                  Abdallah Namourah
+                </h3>
+                <p class="text-primary/50 text-sm mt-1">Workshop Coordinator</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Hala abu-zaytoun</h3>
+                <p class="text-primary/50 text-sm mt-1">Workshop Coordinator</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Rasmeyah jaber</h3>
+                <p class="text-primary/50 text-sm mt-1">Workshop Coordinator</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Malak Almutan</h3>
+                <p class="text-primary/50 text-sm mt-1">Treasurer</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Taleen ALKhateeb</h3>
+                <p class="text-primary/50 text-sm mt-1">Secretary</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Omar Khalil</h3>
+                <p class="text-primary/50 text-sm mt-1">social media Manager</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Abdallah ALHor</h3>
+                <p class="text-primary/50 text-sm mt-1">social media Manager</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Hiyam edaili</h3>
+                <p class="text-primary/50 text-sm mt-1">Graphic designer</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Sajedah Manasrah</h3>
+                <p class="text-primary/50 text-sm mt-1">Photographer</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">
+                  Tawheed-Allah AL-Abed
+                </h3>
+                <p class="text-primary/50 text-sm mt-1">Video Editor</p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Adam AlKhatib</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Cyber-serurity and Ethical Hacking lead
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Maryam Salameh</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Hackathon and Competitive programming lead
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Mohammad Bashir</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Rahaf Rayan</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">
+                  Abdallah Hawamdeh
+                </h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Mera Alawi</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Dana Hassouneh</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Noor Abu-Ras</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+              <div
+                class="member-card w-72 sm:w-80 card-hover text-center p-6 rounded-3xl bg-gradient-to-b from-secondary/5 to-white border border-secondary/10"
+              >
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4">
+                  <div
+                    class="blob-shape w-full h-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center overflow-hidden"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary/60"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-bold text-primary text-lg">Timaa AL-Shaer</h3>
+                <p class="text-primary/50 text-sm mt-1">
+                  Fun and activities Team
+                </p>
+              </div>
+            </div>
+            <!-- Scroll hint (same as events) -->
+            <div
+              class="flex items-center justify-center gap-2 mt-6 text-primary/40"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16l-4-4m0 0l4-4m-4 4h18"
+                /></svg
+              ><span class="text-sm">Scroll to meet the team</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Events Section -->
+      <section
+        id="events"
+        class="py-20 lg:py-32 bg-gradient-to-b from-secondary/10 to-white"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 reveal">
+            <span
+              class="text-secondary font-semibold text-sm uppercase tracking-wider"
+              >What We've Done</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 gradient-text"
+            >
+              Events
+            </h2>
+            <p class="text-primary/60 mt-4 max-w-2xl mx-auto">
+              Explore our journey through workshops, competitions, and memorable
+              experiences.
+            </p>
+          </div>
+          <!-- Events Slider -->
+          <div class="reveal">
+            <div class="events-scroll pb-4">
+              <!-- Event 1 -->
+              <div
+                class="event-card w-80 sm:w-96 card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-secondary/10"
+              >
+                <div
+                  class="h-48 flex items-center justify-center relative overflow-hidden"
+                >
+                  <div class="absolute inset-0 opacity-100">
+                    <img src="images/e1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <span class="text-secondary text-sm font-medium"
+                    >May 2025</span
+                  >
+                  <h3 class="font-bold text-primary text-xl mt-2">
+                    Students Engineering Clubs Launch
+                  </h3>
+                  <a
+                    href="https://www.instagram.com/reel/DJgxnCttDLQ/?igsh=MWI0Z3YzeXZpaDF2bw=="
+                    class="event-link text-orange-400"
+                    >See the Action
+                  </a>
+                </div>
+              </div>
+              <!-- Event 2 -->
+              <div
+                class="event-card w-80 sm:w-96 card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-secondary/10"
+              >
+                <div
+                  class="h-48 bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center relative overflow-hidden"
+                >
+                  <div class="absolute inset-0 opacity-100">
+                    <img src="images/e2.png" alt="" />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <span class="text-secondary text-sm font-medium"
+                    >July 2025</span
+                  >
+                  <h3 class="font-bold text-primary text-xl mt-2">
+                    Summer Hacks: Level Up in Collaboration with Eng4You
+                  </h3>
+                  <a
+                    href="https://www.linkedin.com/feed/update/urn:li:activity:7346680880511246336"
+                    class="event-link text-orange-400"
+                    >See the Action
+                  </a>
+                </div>
+              </div>
+              <!-- Event 3 -->
+              <div
+                class="event-card w-80 sm:w-96 card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-secondary/10"
+              >
+                <div
+                  class="h-48 bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center relative overflow-hidden"
+                >
+                  <div class="absolute inset-0 opacity-100">
+                    <img src="images/e3.jpeg" alt="" />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <span class="text-secondary text-sm font-medium"
+                    >August 2025</span
+                  >
+                  <h3 class="font-bold text-primary text-xl mt-2">
+                    Cyber-serurity Bootcamp with Adam AL-Khatib
+                  </h3>
+                  <a
+                    href="https://www.linkedin.com/feed/update/urn:li:activity:7361743313667796992"
+                    class="event-link text-orange-400"
+                    >See the Action
+                  </a>
+                </div>
+              </div>
+              <!-- Event 4 -->
+              <div
+                class="event-card w-80 sm:w-96 card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-secondary/10"
+              >
+                <div
+                  class="h-48 bg-gradient-to-br from-accent to-primary flex items-center justify-center relative overflow-hidden"
+                >
+                  <div class="absolute inset-0 opacity-100">
+                    <img src="images/e4.jpeg" alt="" />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <span class="text-secondary text-sm font-medium"
+                    >septemper 2025</span
+                  >
+                  <h3 class="font-bold text-primary text-xl mt-2">
+                    Freshman Orientation in collaboration with Gaza Sky Geeks
+                  </h3>
+                  <a
+                    href="https://www.instagram.com/reel/DOy1tGZjcJc/?igsh=MXZ3N3duajdsMzRneA=="
+                    class="event-link text-orange-400"
+                    >See the Action
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Scroll hint -->
+            <div
+              class="flex items-center justify-center gap-2 mt-6 text-primary/40"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16l-4-4m0 0l4-4m-4 4h18"
+                /></svg
+              ><span class="text-sm">Scroll to explore</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 reveal">
+            <span
+              class="text-secondary font-semibold text-sm uppercase tracking-wider"
+              >Get In Touch</span
+            >
+            <h2
+              id="contact-title"
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 gradient-text"
+            >
+              Contact Us
+            </h2>
+            <p class="text-primary/60 mt-4 max-w-2xl mx-auto">
+              Have questions or want to join our community? We'd love to hear
+              from you!
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Contact Form -->
+            <div class="reveal">
+              <form
+                id="contact-form"
+                class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-3xl border border-secondary/20 shadow-lg"
+              >
+                <div class="space-y-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-primary font-medium mb-2"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-primary font-medium mb-2"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-primary font-medium mb-2"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all resize-none"
+                      placeholder="Tell us what's on your mind..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn-primary w-full text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2"
+                  >
+                    Send Message
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Success message -->
+                <div
+                  id="form-success"
+                  class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-xl text-center"
+                >
+                  <span class="font-medium">Thank you!</span> Your message has
+                  been sent successfully.
+                </div>
+              </form>
+            </div>
+            <!-- Contact Info -->
+            <div class="reveal delay-200 space-y-8">
+              <div
+                class="bg-gradient-to-br from-primary to-accent p-8 rounded-3xl text-white"
+              >
+                <h3 class="text-2xl font-bold mb-4 font-cairo">تواصل معنا</h3>
+                <p class="text-white/80 mb-6">
+                  Join our engineering community and be part of something
+                  amazing. We're always looking for passionate individuals who
+                  want to make a difference.
+                </p>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewbox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <span class="text-white/90">handeshasah@gamil.com</span>
+                  </div>
+                  <div class="flex items-center gap-4"></div>
+                </div>
+              </div>
+              <!-- Social Links -->
+              <div class="bg-secondary/10 p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-primary mb-4">Follow Us</h3>
+                <p class="text-primary/60 mb-6">
+                  Stay updated with our latest events and announcements.
+                </p>
+                <div class="flex gap-4">
+                  <!-- Instagram -->
+                  <a
+                    href="https://www.instagram.com/handesha_aqu?igsh=MXRydGhqeXRncGtuMg%3D%3D&utm_source=qr"
+                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary group-hover:text-accent transition-colors"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      /></svg
+                  ></a>
+                  <!-- LinkedIn -->
+                  <a
+                    href="https://www.linkedin.com/company/handesha-sah/"
+                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary group-hover:text-accent transition-colors"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      /></svg
+                  ></a>
+                  <!-- WhatsApp -->
+                  <a
+                    href="https://l.instagram.com/?u=https%3A%2F%2Fchat.whatsapp.com%2FJb4z8lAJIacAiFpnmQnfjU%3Ffbclid%3DPAZnRzaAQEhjFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadG9jtVY2WQsT---WlbeU__INQ91MHzSKb6SvyfwpvtyqTNkFfxolYVwuiuFw_aem_2fHErGYXMFY6Ga74JoUjpw&e=AT0v2zzmD3SRCIg-DWVtf0r1vj6ywyJIq-VkKUkVRoLtYqi-2XA7OySQZ0dVkcIw2KsRE_zPQs2MILs0GvqHJxOzhPbQlz0oQQqGc1n78g"
+                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg
+                      class="w-12 h-12 text-primary group-hover:text-accent transition-colors"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.93 3.18 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.772zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.45-1.272.61-1.447c.159-.175.346-.219.462-.219l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.177.193-.076.379.101.186.449.739.963 1.196.661.588 1.219.77 1.393.853.174.083.277.069.379-.043.101-.112.433-.506.549-.68.116-.173.231-.145.39-.087.159.058 1.011.477 1.184.564.173.087.289.13.332.202.043.072.043.419-.101.824z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="bg-primary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center"
+              >
+                <img src="images/logo-rounded.png" alt="" />
+              </div>
+              <div>
+                <span class="font-cairo font-bold text-white text-lg"
+                  >هندسها صح</span
+                >
+                <span class="text-white/60 text-sm ml-2">Handesha Sah</span>
+              </div>
+            </div>
+            <div class="text-white/60 text-sm text-center">
+              © 2024 Handesha Sah Engineering Club. All rights reserved.
+            </div>
+            <div class="flex items-center gap-4">
+              <a
+                href="#home"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >About</a
+              >
+              <a
+                href="#contact"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

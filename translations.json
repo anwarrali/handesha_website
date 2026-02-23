@@ -1,0 +1,244 @@
+{
+  "en": {
+    "common": {
+      "loading": "Loading...",
+      "siteName": "Handesha Sah"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "team": "Team",
+      "events": "Events",
+      "contact": "Contact",
+      "join": "Join Now"
+    },
+    "hero": {
+      "slogan": "Empowering Future Engineers"
+    },
+    "about": {
+      "badge": "Who We Are",
+      "title": "About Our Club",
+      "description": "Handesha Sah Club is a student engineering club that creates a friendly and supportive space within the Faculty of Engineering. We share knowledge, develop our skills, and foster a spirit of teamwork and collaboration. Our mission is to support students academically, socially, and emotionally through events, meetups, workshops, and meaningful recreational activities. If you're a student who's passionate about self-development and looking for a positive and inspiring environment… we're here 'to engineer it right!'",
+      "stats": {
+        "members": "Active Members",
+        "activities": "Fun activities",
+        "events": "Build & Learn Events",
+        "years": "Years Active"
+      },
+      "cards": {
+        "innovation": {
+          "title": "Innovation",
+          "description": "Pushing boundaries and exploring new ideas to create cutting-edge solutions for real-world problems."
+        },
+        "teamwork": {
+          "title": "Teamwork",
+          "description": "Collaborating effectively to achieve common goals and learning from diverse perspectives."
+        },
+        "workshops": {
+          "title": "Workshops",
+          "description": "Hands-on learning experiences that bridge theory and practice in engineering."
+        }
+      }
+    },
+    "team": {
+      "badge": "Our Team",
+      "title": "Meet the Members",
+      "subtitle": "The passionate individuals driving innovation and excellence in our engineering community.",
+      "scrollHint": "Scroll to meet the team",
+      "roles": {
+        "headOfOperations": "Head of operations",
+        "headOfStrategy": "Head of strategy",
+        "workshopCoordinator": "Workshop Coordinator",
+        "treasurer": "Treasurer",
+        "secretary": "Secretary",
+        "socialMediaManager": "Social Media Manager",
+        "graphicDesigner": "Graphic designer",
+        "photographer": "Photographer",
+        "videoEditor": "Video Editor",
+        "cybersecurityLead": "Cyber-security and Ethical Hacking lead",
+        "competitiveProgrammingLead": "Hackathon and Competitive programming lead",
+        "funActivities": "Fun and activities Team",
+        "Fun": "Fun and activities Team",
+        "VideoEdidor": "Video Editor",
+        "CyberSerurity": "Cyber-security and Ethical Hacking lead",
+        "CompetitiveProgramming": "Hackathon and Competitive programming lead"
+      }
+    },
+    "events": {
+      "badge": "What We've Done",
+      "title": "Events",
+      "subtitle": "Explore our journey through workshops, competitions, and memorable experiences.",
+      "scrollHint": "Scroll to explore",
+      "seeAction": "See the Action",
+      "event1": {
+        "date": "May 2025",
+        "title": "Students Engineering Clubs Launch"
+      },
+      "event2": {
+        "date": "July 2025",
+        "title": "Summer Hacks: Level Up in Collaboration with Eng4You"
+      },
+      "event3": {
+        "date": "August 2025",
+        "title": "Cyber-security Bootcamp with Adam AL-Khatib"
+      },
+      "event4": {
+        "date": "September 2025",
+        "title": "Freshman Orientation in collaboration with Gaza Sky Geeks"
+      }
+    },
+    "contact": {
+      "badge": "Get In Touch",
+      "title": "Contact Us",
+      "subtitle": "Have questions or want to join our community? We'd love to hear from you!",
+      "form": {
+        "nameLabel": "Your Name",
+        "namePlaceholder": "Enter your name",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "Enter your email",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Tell us what's on your mind...",
+        "submit": "Send Message",
+        "success": "Thank you!",
+        "successMessage": "Your message has been sent successfully."
+      },
+      "info": {
+        "title": "Get in Touch to Join",
+        "description": "Join our community and be part of something meaningful. We’re always looking for passionate individuals who want to make a difference, grow, and contribute to an active and driven student environment. If you are a startup, industry professional, or someone interested in giving a lecture or workshop, we would be happy to connect and explore opportunities to collaborate."
+      },
+      "social": {
+        "follow": "Follow Us",
+        "description": "Stay updated with our latest events and announcements.",
+        "memberButton": "Be a Member"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 Handesha Sah Engineering Club. All rights reserved.",
+      "membership": {
+        "title": "Membership Closed",
+        "message": "Membership registration is not open at this time. Please follow us on social media for updates on when membership opens."
+      }
+    }
+  },
+  "ar": {
+    "common": {
+      "loading": "جاري التحميل...",
+      "siteName": "هندسها صح"
+    },
+    "nav": {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "team": "الفريق",
+      "events": "الفعاليات",
+      "contact": "اتصل بنا",
+      "join": "انضم الآن"
+    },
+    "hero": {
+      "slogan": "تمكين مهندسي المستقبل"
+    },
+    "about": {
+      "badge": "من نحن",
+      "title": "عن نادينا",
+      "description": "هندسها صح هو نادٍ هندسي في جامعة القدس تحت مظلة كلية نجّاد زعني للهندسة، تأسس ويُدار على يد طلاب من تخصصات مختلفة يجمعهم هدف مشترك: سد الفجوة بين ما ندرسه في القاعات الدراسية ومتطلبات سوق العمل الحقيقي. نركز على الجانب العملي من خلال الورش التدريبية، والجلسات التقنية، والمسابقات، والمبادرات التطبيقية التي تدفع الطلبة لتطبيق معارفهم خارج إطار المحاضرات. يوفر نادي هندسها صح بيئة تعاونية وحيوية يتم فيها اختبار الأفكار، وتطوير المهارات، وتعزيز روح العمل الجماعي. نسعى إلى بناء مجتمع يشجع على النمو والمبادرة والتفاعل الحقيقي مع المجال الهندسي، مع الحفاظ على روح الحياة الطلابية في جوهره.",
+      "stats": {
+        "members": "عضو نشط",
+        "activities": "نشاط ترفيهي",
+        "events": "حدث تعليمي",
+        "years": "سنوات من النشاط"
+      },
+      "cards": {
+        "innovation": {
+          "title": "الابتكار",
+          "description": "نتجاوز الحدود ونستكشف أفكاراً جديدة لخلق حلول متطورة لمشاكل العالم الحقيقي."
+        },
+        "teamwork": {
+          "title": "العمل الجماعي",
+          "description": "نتعاون بفعالية لتحقيق أهداف مشتركة ونتعلم من وجهات نظر متنوعة."
+        },
+        "workshops": {
+          "title": "ورش العمل",
+          "description": "تجارب تعليمية عملية تربط بين النظرية والتطبيق في الهندسة."
+        }
+      }
+    },
+    "team": {
+      "badge": "فريقنا",
+      "title": "تعرف على الأعضاء",
+      "subtitle": "الأفراد المتحمسون يقودون الابتكار والتميز في مجتمعنا الهندسي.",
+      "scrollHint": "اسحب للتعرف على الفريق",
+      "roles": {
+        "headOfOperations": "رئيسة العمليات",
+        "headOfStrategy": "رئيسة الاستراتيجية",
+        "workshopCoordinator": "منسق ورش العمل",
+        "treasurer": "أمين الصندوق",
+        "secretary": "سكرتيرة",
+        "socialMediaManager": "مسؤول وسائل التواصل الاجتماعي",
+        "graphicDesigner": "مصممة جرافيك",
+        "photographer": "مصورة",
+        "videoEditor": "محررة فيديو",
+        "cybersecurityLead": "مسؤول الأمن السيبراني والاختراق الأخلاقي",
+        "competitiveProgrammingLead": "مسؤولة مسابقات البرمجة",
+        "funActivities": "فريق الأنشطة الترفيهية",
+        "Fun": "فريق الأنشطة الترفيهية",
+        "VideoEdidor": "محررة فيديو",
+        "CyberSerurity": "مسؤول الأمن السيبراني والاختراق الأخلاقي",
+        "CompetitiveProgramming": "مسؤولة مسابقات البرمجة"
+      }
+    },
+    "events": {
+      "badge": "ما أنجزناه",
+      "title": "الفعاليات",
+      "subtitle": "استكشف رحلتنا من خلال ورش العمل والمسابقات والتجارب المميزة",
+      "scrollHint": "اسحب لاستكشاف المزيد",
+      "seeAction": "شاهد الفعالية",
+      "event1": {
+        "date": "مايو 2025",
+        "title": "انطلاق أندية طلاب الهندسة"
+      },
+      "event2": {
+        "date": "يوليو 2025",
+        "title": "صيفك نقطة إنطلاق بالتعاون مع Eng4You"
+      },
+      "event3": {
+        "date": "أغسطس 2025",
+        "title": "معسكر الأمن السيبراني مع آدم الخطيب"
+      },
+      "event4": {
+        "date": "سبتمبر 2025",
+        "title": "توجيه الطلاب الجدد بالتعاون مع Gaza Sky Geeks"
+      }
+    },
+    "contact": {
+      "badge": "تواصل معنا",
+      "title": "اتصل بنا",
+      "subtitle": "لديك أسئلة أو تريد الانضمام إلى مجتمعنا؟ يسعدنا سماعك!",
+      "form": {
+        "nameLabel": "الاسم",
+        "namePlaceholder": "أدخل اسمك",
+        "emailLabel": "البريد الإلكتروني",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني",
+        "messageLabel": "الرسالة",
+        "messagePlaceholder": "أخبرنا بما يدور في ذهنك...",
+        "submit": "إرسال الرسالة",
+        "success": "شكراً لك!",
+        "successMessage": "تم إرسال رسالتك بنجاح."
+      },
+      "info": {
+        "title": "تواصل معنا للإنضمام",
+        "description": "انضم إلى مجتمعنا وكن جزءًا من شيء ذي معنى. نحن دائمًا نبحث عن أشخاص شغوفين يرغبون في إحداث فرق، والتطور، والمساهمة في بيئة طلابية نشِطة وطموحة. إذا كنت شركة ناشئة، أو متخصصًا في المجال الصناعي، أو شخصًا مهتمًا بتقديم محاضرة أو ورشة عمل، يسعدنا التواصل معك واستكشاف فرص التعاون معًا."
+      },
+      "social": {
+        "follow": "تابعنا",
+        "description": "ابق على اطلاع بأحدث فعالياتنا وإعلاناتنا.",
+        "memberButton": "انضم كعضو"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 نادي هندسها صح الهندسي. جميع الحقوق محفوظة.",
+      "membership": {
+        "title": "التسجيل مغلق",
+        "message": "التسجيل لعضوية النادي غير متاح حالياً. يرجى المتابعة معنا على وسائل التواصل لمعرفة مواعيد فتح باب العضوية."
+      }
+    }
+  }
+}

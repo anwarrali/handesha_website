@@ -1,0 +1,606 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+}
+#eng-svg {
+  padding: 0;
+  margin: 0;
+}
+.main-wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #a3ddfd;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #092b56;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(163, 221, 253, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(163, 221, 253, 0.6);
+  }
+}
+
+html[dir="rtl"] .font-poppins {
+  font-family: "Cairo", sans-serif;
+}
+html[dir="rtl"] .nav-link {
+  text-align: right;
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.lang-toggle {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+  margin-left: 1rem;
+}
+.lang-toggle button {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.lang-toggle button.active {
+  background: #092b56;
+  color: white;
+}
+.lang-toggle button:not(.active) {
+  background: transparent;
+  color: #092b56;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  margin-top: 85px;
+}
+
+#title-ar {
+  padding: 8px;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.text-3xl {
+  padding: 10px;
+}
+.text-5xl {
+  padding: 8px;
+}
+#hero-slogan {
+  margin: 0;
+}
+#contact {
+  margin-top: 0;
+  padding-top: 0;
+}
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blob shape for member images */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition: border-radius 0.5s ease;
+}
+
+.blob-shape:hover {
+  border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+}
+
+/* Horizontal scroll for events */
+.events-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin; /* Firefox only - warning expected */
+  scrollbar-color: #a3ddfd #f1f5f9; /* Firefox only - warning expected */
+
+  /* iOS smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Safari/iOS - warning expected */
+
+  /* Hide scrollbar in IE/Edge older versions */
+  -ms-overflow-style: none;
+}
+
+.events-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.events-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.events-scroll::-webkit-scrollbar-thumb {
+  background: #a3ddfd;
+  border-radius: 4px;
+}
+
+.event-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #092b56, #0a4d8c, #a3ddfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero background pattern */
+.hero-pattern {
+  background-image:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(163, 221, 253, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(9, 43, 86, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(163, 221, 253, 0.2) 0%,
+      transparent 30%
+    );
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(9, 43, 86, 0.15);
+}
+
+/* Button style */
+.btn-primary {
+  background: linear-gradient(135deg, #092b56, #0a4d8c);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(9, 43, 86, 0.3);
+}
+
+/* Input focus */
+.input-focus:focus {
+  outline: none;
+  border-color: #a3ddfd;
+  box-shadow: 0 0 0 3px rgba(163, 221, 253, 0.3);
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #a3ddfd;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Engineering icons SVG */
+/*.icon-container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+*/
+/* Members Slider - same style as Events */
+.members-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem 2rem 0.5rem;
+}
+
+.members-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.event-link {
+  text-decoration: underline;
+}
+
+.members-scroll::-webkit-scrollbar-track {
+  background: #a3ddfd47;
+  border-radius: 20px;
+}
+
+.members-scroll::-webkit-scrollbar-thumb {
+  background: #092b56;
+  border-radius: 20px;
+}
+
+.member-card {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+/*here*/
+/* Existing styles plus these additions */
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.reveal.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.reveal.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.reveal.delay-500 {
+  transition-delay: 0.5s;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Icon container */
+/*.icon-container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }*/
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #092b56 0%, #0a4d8c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button primary */
+.btn-primary {
+  background: linear-gradient(135deg, #092b56 0%, #0a4d8c 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(9, 43, 86, 0.3);
+}
+
+/* Input focus */
+.input-focus:focus {
+  outline: none;
+  border-color: #092b56;
+  box-shadow: 0 0 0 3px rgba(9, 43, 86, 0.1);
+}
+
+/* Horizontal scroll for members and events */
+.members-scroll,
+.events-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #092b56 #e5e7eb;
+
+  /* Firefox only - warning expected */
+
+  /* iOS smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Safari/iOS - warning expected */
+
+  /* Hide scrollbar in IE/Edge older versions */
+  -ms-overflow-style: none;
+}
+
+.members-scroll::-webkit-scrollbar,
+.events-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.members-scroll::-webkit-scrollbar-track,
+.events-scroll::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.members-scroll::-webkit-scrollbar-thumb,
+.events-scroll::-webkit-scrollbar-thumb {
+  background-color: #092b56;
+  border-radius: 4px;
+}
+
+/* Member card */
+.member-card,
+.event-card {
+  flex-shrink: 0;
+}
+
+/* Blob shape */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob 8s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 60%;
+  }
+}
+
+/* Float animation */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Fade in up animation */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* RTL specific adjustments */
+html[dir="rtl"] .gradient-text {
+  background: linear-gradient(135deg, #0a4d8c 0%, #092b56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html[dir="rtl"] .btn-primary svg {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .nav-link {
+  text-align: right;
+}
+
+html[dir="rtl"] .lang-toggle button.active {
+  background: #092b56;
+}
+
+/* Member button message animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+#membership-message {
+  z-index: 9999;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Optional: Make footer button responsive on mobile */
+@media (max-width: 640px) {
+  #member-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
