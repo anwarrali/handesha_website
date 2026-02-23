@@ -1379,7 +1379,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="py-20 lg:py-32 bg-white">
+      <section id="contact" class="py-20 lg:py-32 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16 reveal">
             <span
@@ -1394,7 +1394,7 @@
               Contact Us
             </h2>
             <p
-              class="text-primary/60 mt-4 max-w-2xl mx-auto"
+              class="text-primary/60 mt-4 max-w-2xl mx-auto px-4"
               data-i18n="contact.subtitle"
             >
               Have questions or want to join our community? We'd love to hear
@@ -1402,19 +1402,18 @@
             </p>
           </div>
 
-          <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <!-- Contact Form -->
-            <div class="reveal">
+            <div class="reveal w-full">
               <form
                 id="contact-form"
                 action="https://formsubmit.co/handeshasah@gmail.com"
                 method="POST"
-                class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-3xl border border-secondary/20 shadow-lg"
+                class="bg-gradient-to-br from-secondary/5 to-white p-6 sm:p-8 rounded-3xl border border-secondary/20 shadow-lg w-full"
               >
+                <!-- Hidden fields -->
                 <input type="hidden" name="_captcha" value="false" />
-
                 <input type="hidden" name="_template" value="table" />
-
                 <input
                   type="hidden"
                   name="_subject"
@@ -1427,7 +1426,6 @@
                   tabindex="-1"
                   autocomplete="off"
                 />
-
                 <input type="hidden" name="_email_validation" value="strict" />
                 <input
                   type="hidden"
@@ -1435,11 +1433,12 @@
                   value="temporary,disposable"
                 />
 
-                <div class="space-y-6">
+                <div class="space-y-4 sm:space-y-6">
+                  <!-- Name Field -->
                   <div>
                     <label
                       for="name"
-                      class="block text-primary font-medium mb-2"
+                      class="block text-primary font-medium mb-2 text-sm sm:text-base"
                       data-i18n="contact.form.nameLabel"
                       >Your Name</label
                     >
@@ -1447,16 +1446,18 @@
                       type="text"
                       id="name"
                       name="name"
-                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all"
+                      class="input-focus w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all text-sm sm:text-base"
                       data-i18n-placeholder="contact.form.namePlaceholder"
                       placeholder="Enter your name"
                       required
                     />
                   </div>
+
+                  <!-- Email Field -->
                   <div>
                     <label
                       for="email"
-                      class="block text-primary font-medium mb-2"
+                      class="block text-primary font-medium mb-2 text-sm sm:text-base"
                       data-i18n="contact.form.emailLabel"
                       >Email Address</label
                     >
@@ -1464,37 +1465,40 @@
                       type="email"
                       id="email"
                       name="email"
-                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all"
+                      class="input-focus w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all text-sm sm:text-base"
                       data-i18n-placeholder="contact.form.emailPlaceholder"
                       placeholder="Enter your email"
                       required
                     />
                   </div>
+
+                  <!-- Message Field -->
                   <div>
                     <label
                       for="message"
-                      class="block text-primary font-medium mb-2"
+                      class="block text-primary font-medium mb-2 text-sm sm:text-base"
                       data-i18n="contact.form.messageLabel"
                       >Message</label
                     >
                     <textarea
                       id="message"
                       name="message"
-                      rows="5"
-                      class="input-focus w-full px-5 py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all resize-none"
+                      rows="4"
+                      class="input-focus w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl border border-secondary/30 bg-white text-primary placeholder-primary/40 transition-all resize-none text-sm sm:text-base"
                       data-i18n-placeholder="contact.form.messagePlaceholder"
                       placeholder="Tell us what's on your mind..."
                       required
                     ></textarea>
                   </div>
+
+                  <!-- Submit Button -->
                   <button
                     type="submit"
-                    class="btn-primary w-full text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2"
-                    data-i18n="contact.form.submit"
+                    class="btn-primary w-full text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2"
                   >
                     Send Message
                     <svg
-                      class="w-5 h-5"
+                      class="w-4 h-4 sm:w-5 sm:h-5"
                       fill="none"
                       stroke="currentColor"
                       viewbox="0 0 24 24"
@@ -1509,10 +1513,10 @@
                   </button>
                 </div>
 
-                <!-- رسالة النجاح (تظهر بعد الإرسال) -->
+                <!-- Success Message -->
                 <div
                   id="form-success"
-                  class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-xl text-center"
+                  class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-xl text-center text-sm sm:text-base"
                 >
                   <span class="font-medium" data-i18n="contact.form.success"
                     >Thank you!</span
@@ -1523,22 +1527,24 @@
                 </div>
               </form>
             </div>
+
             <!-- Contact Info -->
-            <div class="reveal delay-200 space-y-8">
+            <div class="reveal delay-200 space-y-6 sm:space-y-8 w-full">
+              <!-- Info Card -->
               <div
-                class="bg-gradient-to-br from-primary to-accent p-8 rounded-3xl text-white"
+                class="bg-gradient-to-br from-primary to-accent p-6 sm:p-8 rounded-3xl text-white w-full"
               >
                 <h3
-                  class="text-2xl font-bold mb-4 font-cairo"
+                  class="text-xl sm:text-2xl font-bold mb-4 font-cairo"
                   data-i18n="contact.info.title"
                 >
                   Get in Touch to Join
                 </h3>
                 <p
-                  class="text-white/80 mb-6"
+                  class="text-white/80 mb-6 text-sm sm:text-base leading-relaxed"
                   data-i18n="contact.info.description"
                 >
-                  Join our community and be part of something meaningful. We’re
+                  Join our community and be part of something meaningful. We're
                   always looking for passionate individuals who want to make a
                   difference, grow, and contribute to an active and driven
                   student environment. If you are a startup, industry
@@ -1547,12 +1553,12 @@
                   opportunities to collaborate.
                 </p>
                 <div class="space-y-4">
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-3 sm:gap-4">
                     <div
-                      class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center"
+                      class="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0"
                     >
                       <svg
-                        class="w-5 h-5"
+                        class="w-4 h-4 sm:w-5 sm:h-5"
                         fill="none"
                         stroke="currentColor"
                         viewbox="0 0 24 24"
@@ -1565,35 +1571,37 @@
                         />
                       </svg>
                     </div>
-                    <span class="text-white/90">handeshasah@gmail.com</span>
+                    <span class="text-white/90 text-sm sm:text-base break-all"
+                      >handeshasah@gmail.com</span
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Social Links -->
-              <div class="bg-secondary/10 p-8 rounded-3xl">
+              <div class="bg-secondary/10 p-6 sm:p-8 rounded-3xl w-full">
                 <h3
-                  class="text-xl font-bold text-primary mb-4"
+                  class="text-lg sm:text-xl font-bold text-primary mb-4"
                   data-i18n="contact.social.follow"
                 >
                   Follow Us
                 </h3>
                 <p
-                  class="text-primary/60 mb-6"
+                  class="text-primary/60 mb-6 text-sm sm:text-base"
                   data-i18n="contact.social.description"
                 >
                   Stay updated with our latest events and announcements.
                 </p>
-                <div class="flex gap-4">
+                <div class="flex flex-wrap gap-3 sm:gap-4 items-center">
                   <!-- Instagram -->
                   <a
                     href="https://www.instagram.com/handesha_aqu?igsh=MXRydGhqeXRncGtuMg%3D%3D&utm_source=qr"
-                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group flex-shrink-0"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
-                      class="w-6 h-6 text-primary group-hover:text-accent transition-colors"
+                      class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-accent transition-colors"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -1605,12 +1613,12 @@
                   <!-- LinkedIn -->
                   <a
                     href="https://www.linkedin.com/company/handesha-sah/"
-                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group flex-shrink-0"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
-                      class="w-6 h-6 text-primary group-hover:text-accent transition-colors"
+                      class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-accent transition-colors"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -1622,12 +1630,12 @@
                   <!-- WhatsApp -->
                   <a
                     href="https://chat.whatsapp.com/Jb4z8lAJIacAiFpnmQnfjU"
-                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group"
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all group flex-shrink-0"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
-                      class="w-12 h-12 text-primary group-hover:text-accent transition-colors"
+                      class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-accent transition-colors"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -1636,15 +1644,16 @@
                       />
                     </svg>
                   </a>
+                  <!-- Member Button -->
                   <button
                     id="member-btn"
-                    class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-orange-500/50 transition-all hover:-translate-y-0.5"
+                    class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-orange-500/50 transition-all hover:-translate-y-0.5 flex-shrink-0"
                   >
                     <span data-i18n="contact.social.memberButton"
                       >Be a Member</span
                     >
                     <svg
-                      class="w-4 h-4"
+                      class="w-3 h-3 sm:w-4 sm:h-4"
                       fill="none"
                       stroke="currentColor"
                       viewbox="0 0 24 24"
