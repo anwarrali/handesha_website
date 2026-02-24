@@ -23,7 +23,8 @@
         "members": "Active Members",
         "activities": "Fun activities",
         "events": "Build & Learn Events",
-        "years": "Years Active"
+        "years": "Years Active",
+        "months": "months Active"
       },
       "cards": {
         "innovation": {
@@ -144,7 +145,8 @@
         "members": "عضو نشط",
         "activities": "نشاط ترفيهي",
         "events": "حدث تعليمي",
-        "years": "سنوات من النشاط"
+        "years": "سنوات من النشاط",
+        "months": "أشهر نشطة"
       },
       "cards": {
         "innovation": {

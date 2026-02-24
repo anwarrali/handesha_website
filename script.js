@@ -130,7 +130,66 @@ if (window.elementSdk) {
   });
 }
 
+// Define the updateActivePeriod function FIRST
+function updateActivePeriod() {
+  const startDate = new Date("2025-04-01"); // April 2025
+  const currentDate = new Date();
+
+  let monthsActive = (currentDate.getFullYear() - startDate.getFullYear()) * 12;
+  monthsActive -= startDate.getMonth();
+  monthsActive += currentDate.getMonth();
+
+  if (currentDate.getDate() < startDate.getDate()) {
+    monthsActive--;
+  }
+
+  const yearsActive = Math.floor(monthsActive / 12);
+  const remainingMonths = monthsActive % 12;
+
+  const numberElement = document.getElementById("active-number");
+  const textElement = document.getElementById("active-text");
+
+  // Check if elements exist
+  if (!numberElement || !textElement) {
+    console.log("Active period elements not found yet");
+    return;
+  }
+
+  const currentLang = document.documentElement.lang || "en";
+
+  if (yearsActive < 1) {
+    const monthsToShow = remainingMonths || 1; // Show at least 1 month
+    numberElement.textContent = monthsToShow;
+
+    if (currentLang === "ar") {
+      textElement.textContent = monthsToShow === 1 ? "شهر نشط" : "أشهر نشطة";
+      textElement.setAttribute("data-i18n", "about.stats.months");
+    } else {
+      textElement.textContent = `month${monthsToShow > 1 ? "s" : ""} Active`;
+      textElement.setAttribute("data-i18n", "about.stats.months");
+    }
+  } else {
+    numberElement.textContent = yearsActive;
+
+    if (currentLang === "ar") {
+      textElement.textContent = yearsActive === 1 ? "سنة نشط" : "سنوات نشطة";
+      textElement.setAttribute("data-i18n", "about.stats.years");
+    } else {
+      textElement.textContent = `year${yearsActive > 1 ? "s" : ""} Active`;
+      textElement.setAttribute("data-i18n", "about.stats.years");
+    }
+  }
+
+  console.log(
+    `Active period updated: ${yearsActive} years, ${remainingMonths} months`,
+  );
+}
+
+// Then add all your event listeners
 document.addEventListener("DOMContentLoaded", function () {
+  // Call updateActivePeriod immediately
+  updateActivePeriod();
+
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -202,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
   const memberBtn = document.getElementById("member-btn");
   const GOOGLE_FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLSev7pXZutFCqne3u9GGefEN26efqq_EMd3-RnRcOiucF7Cy_g/viewform";
@@ -233,6 +293,9 @@ document.addEventListener("DOMContentLoaded", function () {
         span.textContent = window.i18n.t("contact.social.memberButton");
       }
     }
+
+    // Update active period when language changes
+    updateActivePeriod();
   });
 
   function showMembershipMessage() {
@@ -320,4 +383,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 8000);
   }
+});
+
+window.addEventListener("load", function () {
+  updateActivePeriod();
 });
